@@ -1,7 +1,7 @@
 
 var currentPage,
     lastPage;
-
+//load and add posts to DOM 
 window.addEventListener('load',function(){
     fetchProduct(1);
     let images = document.querySelector('img');
@@ -50,8 +50,11 @@ function fetchProduct(page){
 }
 
 function bottomVisible() {
+    //vertical height of the scrolled height (not visible to user)
     const scrollY = window.scrollY
+    //visible height of the browser window
     const visible = document.documentElement.clientHeight
+    //the full height of the window
     const pageHeight = document.documentElement.scrollHeight
     const bottomOfPage = visible + scrollY >= pageHeight
     return bottomOfPage || pageHeight < visible
